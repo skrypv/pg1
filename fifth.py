@@ -27,8 +27,8 @@ def is_jpeg(file_name):
 
     # vyhodnoť zda je soubor jpeg
 
-    header = read_header(file_name, len(gif_header1))
-    return header == gif_header1 or header == gif_header2
+    header = read_header(file_name, len(jpeg_header))
+    return header == jpeg_header
 
 
 def is_gif(file_name):
@@ -37,7 +37,8 @@ def is_gif(file_name):
     tu srovná s definovanými hlavičkami v proměnných gif_header1 a gif_header2
     """
     # vyhodnoť zda je soubor gif
-    return False
+    header = read_header(file_name, len(gif_header1))
+    return header == gif_header1 or header == gif_header2
 
 def is_png(file_name):
     """
